@@ -159,7 +159,7 @@ function createPlayer (playerName) {
             }
 
 
-
+            
             if(item.textContent == markerOfPlayerOne.marker
                 || item.textContent == markerOfPlayerTwo.marker
             ){
@@ -169,29 +169,32 @@ function createPlayer (playerName) {
 
 
 
-            if (filledCounter == 9){
-                if(indexOfPlayerOneWin == 0){
+            
+                if(indexOfPlayerOneWin == 0 && filledCounter <= 9){
                     displayResults.textContent = `${markerOfPlayerOne.name} wins`;
                     body.appendChild(displayResults);
                     body.appendChild(restartButton);
                     alert("Game Over");
                 }
-                else if(indexOfPlayerTwoWin == 0){
+                else if(indexOfPlayerTwoWin == 0 && filledCounter <= 9){
                     displayResults.textContent = `${markerOfPlayerTwo.name} wins`;
                     body.appendChild(displayResults);
                     body.appendChild(restartButton);
                     alert("Game Over");
                 }
-                else if (indexOfPlayerOneWin == indexOfPlayerTwoWin){
+                else if (indexOfPlayerOneWin == indexOfPlayerTwoWin && filledCounter == 9){
                     displayResults.textContent = `You Draw`;
                     body.appendChild(displayResults);
                     body.appendChild(restartButton);
                     alert("Game Over");
                 }
+                else if(indexOfPlayerOneWin !== 0 && indexOfPlayerTwoWin !== 0 && filledCounter <= 9){
+                    console.log("")
+                }
                 else {
                     alert("troubleshoot");
                 }
-            }
+            
         });
     });
     
